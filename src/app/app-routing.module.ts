@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {Route, RouterModule} from '@angular/router';
+import {PreloadAllModules, Route, RouterModule} from '@angular/router';
 import {HomeComponent} from './core/home/home.component';
 
 const appRoutes: Route [] = [
@@ -8,7 +8,7 @@ const appRoutes: Route [] = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes, {preloadingStrategy: PreloadAllModules})
   ],
   exports: [RouterModule]
 })
